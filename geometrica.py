@@ -9,8 +9,8 @@ geometricos = [geom.rvs(p_geom, size=size) for size in tamaños]
 
 cajas.figure(figsize=(12, 8))
 cajas.boxplot(geometricos, labels=["10^2", "10^3", "10^4", "10^5"])
-cajas.title("Diagramas de Cajas para Distribución Geométrica")
-cajas.xlabel("Tamaño ")
+cajas.title("Distribución Geométrica\np = 0,08")
+cajas.xlabel("Tamaño de la Muestra")
 cajas.ylabel("Valores")
 cajas.show()
 
@@ -18,7 +18,7 @@ cajas.figure(figsize=(12, 8))
 for i, geoms in enumerate(geometricos):
     cajas.subplot(2, 2, i+1)
     cajas.hist(geoms, bins=30, alpha=0.7)
-    cajas.title(f"Histograma para tamaño de muestra = 10^{i+2}")
+    cajas.title(f"Distribución Geométrica \nTamaño de Muestra = 10^{i+2}")
     cajas.xlabel("Valores")
     cajas.ylabel("Frecuencia")
 cajas.tight_layout()
@@ -34,7 +34,6 @@ def calcular_mediana(geom):
         return (geomasordenados[mid - 1] + geomasordenados[mid]) / 2
     else:
         return geomasordenados[mid]
-
 
 
 def calcular_moda(geom):
