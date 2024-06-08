@@ -59,9 +59,13 @@ def calcular_moda(unpoisson):
     return modas[0]
 
 
-medianas_poisson = []
-modas_poisson = []
+medianas = []
+modas= []
+for geoms in poissons:
+    mediana = calcular_mediana(geoms)
+    moda = calcular_moda(geoms)
+    medianas.append(mediana)
+    modas.append(moda)
 
-
-print("Medianas Poisson:", medianas_poisson)
-print("Modas Poisson:", modas_poisson)
+print("Medianas Poisson:", medianas)
+print("Modas Poisson:", modas)
