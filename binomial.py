@@ -1,6 +1,6 @@
 import matplotlib.pyplot as cajas
 from scipy.stats import binom
-
+import numpy as np
 n = 100
 p = 0.35
 
@@ -10,6 +10,10 @@ binomios = []
 for size in tamaños:
     binomio = binom.rvs(n, p, size=size)
     binomios.append(binomio)
+    media= np.mean(binomio)
+    varianza=np.var(binomio)
+    print(f"Varianza para tamaño {size}: {varianza}")
+    print(f"Media para tamaño {size}: {media}")
 
 cajas.figure(figsize=(12, 8))
 cajas.boxplot(binomios,  labels=["10^2", "10^3", "10^4", "10^5"])
@@ -63,3 +67,7 @@ for binom in binomios:
 
     moda = calcular_moda(binom)
     modas.append(moda)
+
+
+print("Medianas Binomiales:", medianas)
+print("Modas binomiales:", modas)

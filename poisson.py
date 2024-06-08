@@ -1,5 +1,6 @@
 import matplotlib.pyplot as cajas
 from scipy.stats import poisson
+import numpy as np
 
 lambda_poisson = 30
 tamaños = [10**2, 10**3, 10**4, 10**5]
@@ -8,6 +9,11 @@ poissons = []
 for size in tamaños:
     unpoisson = poisson.rvs(lambda_poisson, size=size)
     poissons.append(unpoisson)
+    media= np.mean(unpoisson)
+    varianza=np.var(unpoisson)
+    print(f"Varianza para tamaño {size}: {varianza}")
+    print(f"Media para tamaño {size}: {media}")
+
 
 cajas.figure(figsize=(12, 8))
 cajas.boxplot(poissons, labels=["10^2", "10^3", "10^4", "10^5"])
