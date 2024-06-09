@@ -10,8 +10,8 @@ binomios = []
 for size in tamaños:
     binomio = binom.rvs(n, p, size=size)
     binomios.append(binomio)
-    media= np.mean(binomio)
-    varianza=np.var(binomio)
+    media = np.mean(binomio)
+    varianza = np.var(binomio)
     print(f"Varianza para tamaño {size}: {varianza}")
     print(f"Media para tamaño {size}: {media}")
 

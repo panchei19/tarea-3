@@ -7,15 +7,13 @@ p_geom = 0.08
 tamaños = [10**2, 10**3, 10**4, 10**5]
 
 geometricos = []
-for size in tamaños: 
-    geo=geom.rvs(p_geom, size=size)
+for size in tamaños:
+    geo = geom.rvs(p_geom, size=size)
     geometricos.append(geo)
-    media= np.mean(geo)
-    varianza=np.var(geo)
+    media = np.mean(geo)
+    varianza = np.var(geo)
     print(f"Varianza para tamaño {size}: {varianza}")
     print(f"Media para tamaño {size}: {media}")
-
-
 
 
 cajas.figure(figsize=(12, 8))

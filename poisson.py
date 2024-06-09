@@ -9,8 +9,8 @@ poissons = []
 for size in tamaños:
     unpoisson = poisson.rvs(lambda_poisson, size=size)
     poissons.append(unpoisson)
-    media= np.mean(unpoisson)
-    varianza=np.var(unpoisson)
+    media = np.mean(unpoisson)
+    varianza = np.var(unpoisson)
     print(f"Varianza para tamaño {size}: {varianza}")
     print(f"Media para tamaño {size}: {media}")
 
@@ -60,7 +60,7 @@ def calcular_moda(unpoisson):
 
 
 medianas = []
-modas= []
+modas = []
 for geoms in poissons:
     mediana = calcular_mediana(geoms)
     moda = calcular_moda(geoms)
